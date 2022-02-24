@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(51, 36, 63);
+    background: rgb(201, 199, 199);
+    background: rgb(33, 37, 56);
+    background-size: cover;
+    overflow: hidden;
+}
+#btn,#btn-Dark,#btn-Black,#btn-Glass{
+    display: none;
+}
+.nav{
+    width: 80px;
+    height: 100%;
+    background-color: rgb(221, 217, 217);
+    transition: .5s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.nav:hover .fa-circle-chevron-left {
+    opacity: 1;
+    transform: rotate(180deg);
+
+}
+.fa-circle-chevron-left{
+    color: rgb(0, 96, 185);
+    font-size: 1.5em;
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    transition: .5s;
+    cursor: pointer;
+    opacity: 0;
+}
+.theme{
+    width: 100%;
+    height: 60px ;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    border-radius: 10px;
+}
+.label{
+    display: none;
+    cursor: pointer;
+}
+.nav__ul{
+    width: 90%;
+    height: calc(100% - 60px);
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.nav__li{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: .5s;
+    
+}
+.nav__a{
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+    font-size: 20px;
+    display: none;
+    transition: .5s;
+}
+
+#btn:checked ~ .nav{
+    width: 300px;
+}
+#btn:checked ~ .nav .theme{
+    width: 90%;
+    opacity: 1;
+    justify-content: space-around;
+}
+
+#btn:checked ~ .nav .label{
+    display: block;
+}
+#btn:checked ~ .nav .nav__li{
+    justify-content: left;
+}
+#btn:checked ~ .nav .nav__a{
+    display: block;
+}
+
+
+/*black*/
+#btn-Black:checked ~ .nav{
+    background-color: black;
+}
+#btn-Black:checked ~ .nav .theme{
+    color: white;
+}
+#btn-Black:checked ~ .nav .fa-book{
+    color: white;
+}
+#btn-Black:checked ~ .nav .nav__a{
+    color: white;
+}
+#btn-Black:checked ~ .home{
+    background-color: rgb(17, 16, 16);
+}
+
+
+
+/*Dark*/
+#btn-Dark:checked ~ .nav{
+    background-color: rgb(47, 47, 66);
+}
+#btn-Dark:checked ~ .nav .theme{
+    color: white;
+}
+#btn-Dark:checked ~ .nav .fa-book{
+    color: white;
+}
+#btn-Dark:checked ~ .nav .nav__a{
+    color: white;
+}
+#btn-Dark:checked ~ .home{
+    background-color: rgb(37, 37, 51);
+}
+#btn-Dark:checked ~ .home .home__text{
+    color: white;
+}
+
+
+/*glass*/
+#btn-Glass:checked ~ .nav{
+    background-color: rgb(71, 47, 116);
+    backdrop-filter: blur(6px);
+}
+#btn-Glass:checked ~ .nav .theme{
+    color: white;
+}
+#btn-Glass:checked ~ .nav .fa-book{
+    color: white;
+}
+#btn-Glass:checked ~ .nav .nav__a{
+    color: white;
+}
+#btn-Glass:checked ~ .home{
+    background-color: rgb(55, 38, 87);
+}
+.home{
+    width: calc(100% - 80px);
+    height: 100vh;
+    transition: .5s;
+    background-color: rgb(192, 187, 187);
+    margin-left: 80px;
+    
+}
+.home__text{
+    text-align: center;
+}
